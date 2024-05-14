@@ -78,7 +78,7 @@ PSPire is a machine learning model based on integrated residue-level and structu
    chmod o+x /path/to/PSPire/software/PSAIA/psa
    ```
 # Usage on Code Ocean
-PSPire have been submitted to the Code Ocean platform (https://codeocean.com/capsule/3528836/tree/v1) and the required environment to run the code have been setup. Users can edit the "run" file on the platform to predict proteins of interest.
+PSPire have been submitted to the Code Ocean platform (https://codeocean.com/capsule/3528836/tree/v1) and the required environment to run the code have been setup. Users can edit the "run" and "test.sh" files on the platform to predict proteins of interest.
 
 # Parameters
 
