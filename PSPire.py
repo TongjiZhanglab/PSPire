@@ -187,7 +187,7 @@ def get_lists():
         for i in inputfiles:
             fileName = dirName + '/' + os.path.basename(i)
             if not os.path.isfile(fileName):
-                run_cmd('ln '+i+' '+dirName)
+                run_cmd('cp '+i+' '+dirName)
             files.append(fileName)
 
     if uniprot_ids:
