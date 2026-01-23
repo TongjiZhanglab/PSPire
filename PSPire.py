@@ -13,7 +13,7 @@ Usage: -u/-f/-p/-d are required and you can only specify one of them.
 2. ${SOFTWAREPATH}/PSPire.py -u P09651 O00444
 3. ${SOFTWAREPATH}/PSPire.py -f ${SOFTWAREPATH}/demo/PDB_files_list.txt  #please change the PDB file path before running
 4. ${SOFTWAREPATH}/PSPire.py -f ${SOFTWAREPATH}/demo/uniprotID_list.txt
-5. ${SOFTWAREPATH}/PSPire.py -p ${SOFTWAREPATH}/demo/AF-A0A2R8QUZ1-F1-model_v2.pdb
+5. ${SOFTWAREPATH}/PSPire.py -p ${SOFTWAREPATH}/demo/AF-A0A2R8QUZ1-F1-model_v6.pdb
 6. ${SOFTWAREPATH}/PSPire.py -d ${SOFTWAREPATH}/demo
 """
 
@@ -103,7 +103,7 @@ make_dir(tmpDir,args.resume)
 # ------------------------------------
 def download_pdb_file(uid, dir):
     '''Download pdb file from AlphaFold database to a new folder'''
-    filename = 'AF-' + uid + '-F1-model_v2.pdb'
+    filename = 'AF-' + uid + '-F1-model_v6.pdb'
     r = requests.get(f'https://alphafold.ebi.ac.uk/files/{filename}',headers={'Connection':'close'},verify=False)
     if r.status_code != 200:
         warn(f'Could not find pdb file for {uid} in AlphaFold database. Skip this file.')
@@ -192,7 +192,7 @@ def get_lists():
 
     if uniprot_ids:
         for uid in uniprot_ids:
-            fileName = dirName + '/AF-'+uid+'-F1-model_v2.pdb'
+            fileName = dirName + '/AF-'+uid+'-F1-model_v6.pdb'
             if not os.path.isfile(fileName):
                 if download_pdb_file(uid, dirName):
                     files.append(fileName)
