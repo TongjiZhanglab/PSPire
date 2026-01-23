@@ -214,13 +214,15 @@ def get_lists():
         outputFile = args.output
     
     if os.path.basename(files[0]).startswith('AF'):
-        uids = [os.path.basename(i).replace('AF-', '').replace('-F1-model_v2.pdb', '') for i in files]
+        uids = [os.path.basename(i).split('-')[1] for i in files]
+        # uids = [os.path.basename(i).replace('AF-', '').replace('-F1-model_v2.pdb', '') for i in files]
     else:
         uids = [os.path.basename(i).replace('.pdb', '') for i in files]
     
     if len(ori_files)>0:
         if os.path.basename(ori_files[0]).startswith('AF'):
-            ori_ids = [os.path.basename(i).replace('AF-', '').replace('-F1-model_v2.pdb', '') for i in ori_files]
+            ori_ids = [os.path.basename(i).split('-')[1] for i in ori_files]
+            # ori_ids = [os.path.basename(i).replace('AF-', '').replace('-F1-model_v2.pdb', '') for i in ori_files]
         else:
             ori_ids = [os.path.basename(i).replace('.pdb', '') for i in ori_files]
         
